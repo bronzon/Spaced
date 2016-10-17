@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public enum AttachmentFacingDirection {
     NORTH,
@@ -37,35 +38,38 @@ public class AttachmentPoint : MonoBehaviour {
 
     public AttachmentFacingDirection attachmentFacingDirection;
     public RadialMenu radialMenuPrefab;
-    private ModuleSpawner moduleSpawner;
-
+ 
     void Start() {
-        this.moduleSpawner = ModuleSpawner.instance;
         this.radialCanvas = GameObject.FindGameObjectWithTag("RadialCanvas").GetComponent<Canvas>();
     }
 
-    void OnMouseDown() {
-        if (menu != null) {
+    void OnMouseDown() {		
+		if (GameObject.FindObjectsOfType<RadialMenu>().Length > 0) {
+			return;
+		}
+
+		if (menu != null) {
             DestroyImmediate(menu);
         }
 
         menu = Instantiate(radialMenuPrefab);
         menu.transform.SetParent(radialCanvas.transform, false);
-        menu.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        menu.menuExecuted += MenuExecuted;
+		Vector3 world = Camera.main.WorldToScreenPoint (transform.position);
+		menu.transform.position = new Vector2 (world.x, world.y);
+		menu.ShowMenu(MenuExecuted);
     }
 
-    void MenuExecuted(RadialMenuAction radialMenuAction) {
-        DestroyImmediate(menu.gameObject);
-        if (radialMenuAction != RadialMenuAction.CANCEL) {            
-            Module module = moduleSpawner.Spawn(radialMenuAction);
+    void MenuExecuted(Module modulePrefab) {
+		if (modulePrefab != null) {            
+			Module module = Instantiate (modulePrefab);
             AttachmentFacingDirection opposingDirection = GetOpposingDirection(attachmentFacingDirection);
             AttachmentPoint attachmentPoint = module.FindAttachmentPoint(opposingDirection);
             if (attachmentPoint == null) {
                 DestroyImmediate(module.gameObject);
             } else {
-                module.transform.SetParent(transform, false);
-                module.transform.Translate(-attachmentPoint.transform.localPosition);
+				module.transform.SetParent(transform, false);
+				module.transform.Translate(-attachmentPoint.transform.localPosition);
+				GetComponent<BoxCollider> ().enabled = false;
             }
             
         }

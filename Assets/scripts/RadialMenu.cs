@@ -11,35 +11,33 @@ public enum RadialMenuAction {
 }
 
 public class RadialMenu : MonoBehaviour {
-    public Action<RadialMenuAction> menuExecuted;
+    
     public Button habitatButton;
     public Button propulsionButton;
     public Button fuelButton;
     public Button cancelButton;
 
-    void Start() {
-        habitatButton.onClick.AddListener(() => {
-            if (menuExecuted != null) {
-                menuExecuted(RadialMenuAction.HABITAT);
-            }
-        });
+	public void ShowMenu(Action<Module> modulePrefabSelected) {
+		SelectModule selectModule = GameObject.FindObjectOfType<SelectModule> ();
 
-        fuelButton.onClick.AddListener(() => {
-            if (menuExecuted != null) {
-                menuExecuted(RadialMenuAction.FUEL);
-            }
-        });
+		habitatButton.onClick.AddListener(() => {
+			selectModule.ShowSelectPrefabs(RadialMenuAction.HABITAT, modulePrefabSelected);
+			Destroy(this.gameObject);
+		});
 
-        propulsionButton.onClick.AddListener(() => {
-            if (menuExecuted != null) {
-                menuExecuted(RadialMenuAction.PROPULSION);
-            }
-        });
+		fuelButton.onClick.AddListener(() => {
+			selectModule.ShowSelectPrefabs(RadialMenuAction.FUEL, modulePrefabSelected);
+			Destroy(this.gameObject);
+		});
 
-        cancelButton.onClick.AddListener(() => {
-            if (menuExecuted != null) {
-                menuExecuted(RadialMenuAction.CANCEL);
-            }
-        });
-    }
+		propulsionButton.onClick.AddListener(() => {
+			selectModule.ShowSelectPrefabs(RadialMenuAction.PROPULSION, modulePrefabSelected);
+			Destroy(this.gameObject);
+		});
+
+		cancelButton.onClick.AddListener(() => {			
+			Destroy(this.gameObject);
+		});
+	}
+  
 }

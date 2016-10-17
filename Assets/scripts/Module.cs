@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 public abstract class Module : MonoBehaviour {
+	public string moduleName;
+	public int mass;
+
     public List<AttachmentPoint> GetAttachmentPoints() {
         return transform.GetComponentsInChildren<AttachmentPoint>().ToList();
     }
@@ -16,4 +19,7 @@ public abstract class Module : MonoBehaviour {
         }
         return null;
     }
+
+	public abstract string GetDescription ();
+
 }
