@@ -19,3 +19,4 @@ E:\dev\spaced\Temp\bin\Debug\UnityEngine.UI.xml
 E:\dev\spaced\Temp\bin\Debug\UnityEngine.Networking.xml
 E:\dev\spaced\obj\Debug\Assembly-CSharp.dll
 E:\dev\spaced\obj\Debug\Assembly-CSharp.pdb
+E:\dev\Spaced\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb

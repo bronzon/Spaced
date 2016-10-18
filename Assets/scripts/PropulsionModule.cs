@@ -13,6 +13,7 @@ public class PropulsionModule : Module {
 	}
 
 	public override void Launch ()	{
+		print ("launch");
 		StartCoroutine (RunEngine ());			
 	}
 
@@ -26,13 +27,13 @@ public class PropulsionModule : Module {
 
 	IEnumerator RunEngine () {
 		GetComponentInChildren<ParticleSystem> ().Play ();
-
+		GetComponentInChildren<Light> ().enabled = true;
 		while (fuelSupply.HasFuel()) {
 			fuelSupply.ConsumeFuel (power * fuelEfficiency);
-			rbody.AddForce (Vector3.up*power);
+			rbody.AddForce (transform.up*power);
 			yield return new WaitForEndOfFrame ();
 		}
-
+		GetComponentInChildren<Light> ().enabled = false;
 		GetComponentInChildren<ParticleSystem> ().Stop ();
 	}
 }

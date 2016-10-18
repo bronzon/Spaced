@@ -21,8 +21,10 @@ public class CameraHandler : MonoBehaviour {
         if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved ||
              (startMousePos != Vector2.zero && Input.GetMouseButton(0)))) {
             Vector2 mouseOffsetFromStart = startMousePos - mousePosition;
-            float dragLength = mouseOffsetFromStart.x;
-            transform.RotateAround(track.transform.position, Vector3.up, dragLength* mouseAcceleration);
+			float dragLengthX = mouseOffsetFromStart.x;
+			float dragLengthY = mouseOffsetFromStart.y;
+            transform.RotateAround(track.transform.position, Vector3.up, dragLengthX* mouseAcceleration);
+			transform.RotateAround(track.transform.position, Vector3.right, dragLengthY* mouseAcceleration);
             startMousePos = mousePosition;
         }
 

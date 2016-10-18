@@ -5,7 +5,7 @@ public class Rocket : MonoBehaviour {
 	private Statistics statistics;
 
 	public void Launch() {		
-		var modules = GetComponentsInChildren<Module> ();
+		var modules = FindObjectsOfType<Module> ();
 		foreach (Module module in modules) {
 			module.Launch ();
 		}
