@@ -13,7 +13,7 @@ public enum AttachmentFacingDirection {
 }
 
 
-public class AttachmentPoint : MonoBehaviour {
+public class AttachmentPoint : IClickable {
     private Canvas radialCanvas;
     public static AttachmentFacingDirection GetOpposingDirection(AttachmentFacingDirection direction) {
         switch (direction) {
@@ -38,12 +38,14 @@ public class AttachmentPoint : MonoBehaviour {
 
     public AttachmentFacingDirection attachmentFacingDirection;
     public RadialMenu radialMenuPrefab;
+	private CameraHandler cameraHandler;
  
     void Start() {
         this.radialCanvas = GameObject.FindGameObjectWithTag("RadialCanvas").GetComponent<Canvas>();
+		this.cameraHandler = FindObjectOfType<CameraHandler> ();
     }
 
-    void OnMouseDown() {		
+	public override void Click () {
 		if (GameObject.FindObjectsOfType<RadialMenu>().Length > 0) {
 			return;
 		}
@@ -69,7 +71,9 @@ public class AttachmentPoint : MonoBehaviour {
             } else {
 				module.transform.SetParent(transform, false);
 				module.transform.Translate(-attachmentPoint.transform.localPosition);
+				GetComponent<FixedJoint> ().connectedBody = module.GetComponent<Rigidbody>();
 				GetComponent<BoxCollider> ().enabled = false;
+				cameraHandler.track = module.gameObject;
             }
             
         }

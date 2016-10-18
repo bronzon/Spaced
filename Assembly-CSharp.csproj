@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7502BB59-E627-7231-224B-9F50ECD2A57D}</ProjectGuid>
+    <ProjectGuid>{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,14 +46,20 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\AttachmentPoint.cs" />
-     <Compile Include="Assets\scripts\CameraController.cs" />
+     <Compile Include="Assets\scripts\AttachmentPointInput.cs" />
+     <Compile Include="Assets\scripts\CameraHandler.cs" />
      <Compile Include="Assets\scripts\FuelModule.cs" />
+     <Compile Include="Assets\scripts\FuelSupply.cs" />
      <Compile Include="Assets\scripts\HabitatModule.cs" />
+     <Compile Include="Assets\scripts\IClickable.cs" />
      <Compile Include="Assets\scripts\Module.cs" />
      <Compile Include="Assets\scripts\ModuleDescription.cs" />
+     <Compile Include="Assets\scripts\ModuleSpawner.cs" />
      <Compile Include="Assets\scripts\PropulsionModule.cs" />
      <Compile Include="Assets\scripts\RadialMenu.cs" />
+     <Compile Include="Assets\scripts\Rocket.cs" />
      <Compile Include="Assets\scripts\SelectModule.cs" />
+     <Compile Include="Assets\scripts\StartPlate.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

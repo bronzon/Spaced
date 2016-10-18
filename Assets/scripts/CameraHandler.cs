@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraController : MonoBehaviour {
+public class CameraHandler : MonoBehaviour {
     public GameObject track;
     private Vector2 startMousePos = Vector2.zero;
     public float mouseAcceleration = 0.5f;

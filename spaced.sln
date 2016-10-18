@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{7DAA5DF1-AFB0-9F7B-9B5B-E4AFD095C626}") = "spaced", "Assembly-CSharp.csproj", "{7502BB59-E627-7231-224B-9F50ECD2A57D}"
+Project("{8121DD7D-0929-083B-F437-1426DF9688D0}") = "Spaced", "Assembly-CSharp.csproj", "{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7502BB59-E627-7231-224B-9F50ECD2A57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7502BB59-E627-7231-224B-9F50ECD2A57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7502BB59-E627-7231-224B-9F50ECD2A57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7502BB59-E627-7231-224B-9F50ECD2A57D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7508EA77-EE93-FFD9-A959-1D7E2A4FBF57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

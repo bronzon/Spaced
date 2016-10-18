@@ -8,6 +8,10 @@ public class HabitatModule : Module {
 		return "Space for: " + spaceForAstronouts + "\r\n" + "Mass: " + mass;
 	}
 
+	public override void Launch () {
+		
+	}
+
 	// Use this for initialization
 	void Start () {
 	
