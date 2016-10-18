@@ -56,8 +56,7 @@ public class AttachmentPoint : IClickable {
 
         menu = Instantiate(radialMenuPrefab);
         menu.transform.SetParent(radialCanvas.transform, false);
-		Vector3 world = Camera.main.WorldToScreenPoint (transform.position);
-		menu.transform.position = new Vector2 (world.x, world.y);
+		menu.transform.position = Input.mousePosition;
 		menu.ShowMenu(MenuExecuted);
     }
 
@@ -69,9 +68,11 @@ public class AttachmentPoint : IClickable {
             if (attachmentPoint == null) {
                 DestroyImmediate(module.gameObject);
             } else {
-				module.transform.SetParent(transform, false);
+				module.transform.position = transform.position;
 				module.transform.Translate(-attachmentPoint.transform.localPosition);
-				GetComponent<FixedJoint> ().connectedBody = module.GetComponent<Rigidbody>();
+
+				var moduleJoint = module.gameObject.AddComponent<FixedJoint> ();
+				moduleJoint.connectedBody = transform.parent.GetComponent<Rigidbody>();
 				GetComponent<BoxCollider> ().enabled = false;
 				cameraHandler.track = module.gameObject;
             }

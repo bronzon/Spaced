@@ -19,15 +19,20 @@ public class PropulsionModule : Module {
 	void Start() {
 		rbody = GetComponent<Rigidbody> ();
 		fuelSupply = FindObjectOfType<FuelSupply> ();
+		FindObjectOfType<Statistics> ().AddMass (mass);
+		FindObjectOfType<Statistics> ().AddPower(power);
 	}
 
 
 	IEnumerator RunEngine () {
+		GetComponentInChildren<ParticleSystem> ().Play ();
+
 		while (fuelSupply.HasFuel()) {
-			print ("I am doing power to the engine");
 			fuelSupply.ConsumeFuel (power * fuelEfficiency);
 			rbody.AddForce (Vector3.up*power);
 			yield return new WaitForEndOfFrame ();
 		}
+
+		GetComponentInChildren<ParticleSystem> ().Stop ();
 	}
 }

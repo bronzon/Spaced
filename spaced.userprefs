@@ -1,15 +1,19 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\AttachmentPoint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Statistics.cs">
     <Files>
-      <File FileName="Assets\scripts\FuelModule.cs" Line="7" Column="43" />
-      <File FileName="Assets\scripts\SelectModule.cs" Line="31" Column="1" />
-      <File FileName="Assets\scripts\Module.cs" Line="17" Column="27" />
-      <File FileName="Assets\scripts\HabitatModule.cs" Line="8" Column="71" />
-      <File FileName="Assets\scripts\PropulsionModule.cs" Line="9" Column="97" />
-      <File FileName="Assets\scripts\ModuleDescription.cs" Line="10" Column="2" />
-      <File FileName="Assets\scripts\AttachmentPoint.cs" Line="58" Column="60" />
-      <File FileName="Assets\scripts\RadialMenu.cs" Line="24" Column="29" />
+      <File FileName="Assets\scripts\CameraHandler.cs" Line="14" Column="3" />
+      <File FileName="Assets\scripts\Module.cs" Line="23" Column="2" />
+      <File FileName="Assets\scripts\HabitatModule.cs" Line="17" Column="50" />
+      <File FileName="Assets\scripts\PropulsionModule.cs" Line="29" Column="21" />
+      <File FileName="Assets\scripts\FuelSupply.cs" Line="12" Column="2" />
+      <File FileName="Assets\scripts\Rocket.cs" Line="5" Column="24" />
+      <File FileName="Assets\scripts\FuelModule.cs" Line="16" Column="1" />
+      <File FileName="Assets\scripts\AttachmentPointInput.cs" Line="17" Column="1" />
+      <File FileName="Assets\scripts\StartPlate.cs" Line="44" Column="61" />
+      <File FileName="Assets\scripts\IClickable.cs" Line="5" Column="31" />
+      <File FileName="Assets\scripts\AttachmentPoint.cs" Line="78" Column="22" />
+      <File FileName="Assets\Statistics.cs" Line="36" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

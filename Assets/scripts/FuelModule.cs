@@ -13,6 +13,8 @@ public class FuelModule : Module {
 	// Use this for initialization
 	void Start () {
 		FindObjectOfType<FuelSupply> ().AddFuelFromModule (fuelCapacity);
+		FindObjectOfType<Statistics> ().AddMass (mass);
+		FindObjectOfType<Statistics> ().AddFuel (fuelCapacity);
 	}
 	
 	// Update is called once per frame

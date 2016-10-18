@@ -41,9 +41,8 @@ public class StartPlate : IClickable {
 				DestroyImmediate(module.gameObject);
 				print ("Could not find a southward attachmentpoint, needed for starting object");
 			} else {
-				GameObject rocketGameObject = new GameObject ("Rocket");
-				Rocket rocketComponent = rocketGameObject.AddComponent<Rocket> ();
-				module.transform.SetParent (rocketGameObject.transform);
+				module.name = "Rocket";
+				Rocket rocketComponent = module.gameObject.AddComponent<Rocket> ();
 				module.transform.Translate(-attachmentPoint.transform.localPosition);
 				launchButton.onClick.AddListener(rocketComponent.Launch);
 				cameraHandler.track = module.gameObject;

@@ -10,7 +10,8 @@ public class CameraHandler : MonoBehaviour {
     }
 
     void Update() {
-        
+		transform.LookAt(track.transform);
+
         Vector2 mousePosition = Input.mousePosition;
 
         if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0)) {

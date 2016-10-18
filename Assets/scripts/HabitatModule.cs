@@ -14,7 +14,7 @@ public class HabitatModule : Module {
 
 	// Use this for initialization
 	void Start () {
-	
+		FindObjectOfType<Statistics> ().AddMass (mass);
 	}
 	
 	// Update is called once per frame
